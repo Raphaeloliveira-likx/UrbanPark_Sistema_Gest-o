@@ -8,7 +8,7 @@ using BackUrbanPark.Model;
 
 namespace BackUrbanPark.Repository
 {
-    public class VagaRepository
+    public static class VagaRepository
     {
         /// <summary>
         /// Insere uma vaga no banco de dados 
@@ -16,12 +16,12 @@ namespace BackUrbanPark.Repository
         ///<param name="vaga"><</param>
         ///<returns></returns>
         
-        public int Inserir(Vaga vaga)
+        public static int Inserir(Vaga vaga)
         {
             return 1;
         }
 
-        public Vaga? ListarPorId(int id)
+        public static Vaga? ListarPorId(int id)
         {
             string sql = "SELECT id_vaga, numero_vaga, tipo, status FROM vagas WHERE id = @id";
 
@@ -42,7 +42,7 @@ namespace BackUrbanPark.Repository
             return null;
         }
 
-        public List<Vaga> ListarTodas()
+        public static List<Vaga> ListarTodas()
         {
 
             string sql = "SELECT id_vaga, numero_vaga, tipo, status FROM vagas";
@@ -64,7 +64,7 @@ namespace BackUrbanPark.Repository
             }
             return vagas;
         }
-        private Vaga MapearVaga(MySqlDataReader reader)
+        private static Vaga MapearVaga(MySqlDataReader reader)
         {
 
             int id_vaga = reader.GetInt32("id_vaga");
