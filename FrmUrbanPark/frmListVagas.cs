@@ -42,8 +42,18 @@ namespace FrmUrbanPark
                 cardVaga.StatusVaga = statusVaga;
                 cardVaga.NumeroVaga = strNumeroVaga;
 
+                cardVaga.CardClicado += cardVaga_click;
+
                 flwCardVagas.Controls.Add(cardVaga);
             }
+        }
+
+        public void cardVaga_click(object sender, EventArgs e)
+        {
+            ctrStatusVaga cardSelecionado = (ctrStatusVaga)sender;
+
+            MessageBox.Show($"Vaga: {cardSelecionado.NumeroVaga} || Status: {cardSelecionado.StatusVaga}");
+
         }
     }
 }

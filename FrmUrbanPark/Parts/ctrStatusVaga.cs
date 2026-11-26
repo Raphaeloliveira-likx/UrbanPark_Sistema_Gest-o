@@ -32,6 +32,10 @@ namespace FrmUrbanPark.Parts
         public ctrStatusVaga()
         {
             InitializeComponent();
+
+            this.Click += AoClicarNoCard;
+            this.lblNumeroVaga.Click += AoClicarNoCard;
+            this.picStatusVaga.Click += AoClicarNoCard;
         }
 
         private void ctrStatusVaga_Load(object sender, EventArgs e)
@@ -63,6 +67,10 @@ namespace FrmUrbanPark.Parts
                 this.picStatusVaga.Image = Properties.Resources.carIconVermelho;
             }
 
+        }
+         private void AoClicarNoCard (object sender, EventArgs e)
+        {
+            CardClicado?.Invoke(this,EventArgs.Empty);
         }
     }
 }
