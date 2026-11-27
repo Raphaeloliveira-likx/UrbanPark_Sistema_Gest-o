@@ -52,7 +52,16 @@ namespace FrmUrbanPark
         {
             ctrStatusVaga cardSelecionado = (ctrStatusVaga)sender;
 
-            MessageBox.Show($"Vaga: {cardSelecionado.NumeroVaga} || Status: {cardSelecionado.StatusVaga}");
+            if (cardSelecionado.StatusVaga == StatusVaga.Livre)
+            {
+                frmRegistrarEntrada frmRegistrarEntrada = new frmRegistrarEntrada(cardSelecionado.NumeroVaga,
+                    cardSelecionado.IdVaga);
+                frmRegistrarEntrada.ShowDialog();
+            }
+            else
+            {
+                frmRegistrarSaida frmRegistrarSaida = new frmRegistrarSaida();
+            }
 
         }
     }

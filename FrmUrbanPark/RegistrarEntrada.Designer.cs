@@ -30,40 +30,38 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRegistrarEntrada));
             pnlCabecalho = new Panel();
+            picLogo = new PictureBox();
+            lblSubtitulo = new Label();
+            lblTitulo = new Label();
+            label10 = new Label();
+            label9 = new Label();
+            label8 = new Label();
             grpBuscarVeiculo = new GroupBox();
             lblPlacaVeiculo = new Label();
             mskPlacaVeiculo = new TextBox();
             btnBuscarPlacaVeiculo = new Button();
-            groupBox2 = new GroupBox();
-            label4 = new Label();
-            label3 = new Label();
-            label2 = new Label();
-            textBox4 = new TextBox();
-            textBox3 = new TextBox();
-            textBox2 = new TextBox();
-            groupBox3 = new GroupBox();
-            label7 = new Label();
-            dateTimePicker1 = new DateTimePicker();
-            dateTimePicker2 = new DateTimePicker();
-            label6 = new Label();
-            label5 = new Label();
-            textBox5 = new TextBox();
+            grpDadosVeiculo = new GroupBox();
+            lblCorModelo = new Label();
+            lblCliente = new Label();
+            txtCorModelo = new TextBox();
+            txtNomeCliente = new TextBox();
+            grpMovimentacao = new GroupBox();
+            lblHoraEntrada = new Label();
+            dtInfoHrEntrada = new DateTimePicker();
+            dtInfoDtEntrada = new DateTimePicker();
+            lblDataEntrada = new Label();
+            lblVagaSelecionada = new Label();
+            txtVagaSelecionada = new TextBox();
             panel2 = new Panel();
-            button3 = new Button();
+            btnCancelar = new Button();
             button2 = new Button();
-            button1 = new Button();
-            label8 = new Label();
-            label9 = new Label();
-            label10 = new Label();
-            lblTitulo = new Label();
-            lblSubtitulo = new Label();
-            picLogo = new PictureBox();
+            btnRegistrarEntrada = new Button();
             pnlCabecalho.SuspendLayout();
-            grpBuscarVeiculo.SuspendLayout();
-            groupBox2.SuspendLayout();
-            groupBox3.SuspendLayout();
-            panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picLogo).BeginInit();
+            grpBuscarVeiculo.SuspendLayout();
+            grpDadosVeiculo.SuspendLayout();
+            grpMovimentacao.SuspendLayout();
+            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // pnlCabecalho
@@ -79,6 +77,70 @@
             pnlCabecalho.Name = "pnlCabecalho";
             pnlCabecalho.Size = new Size(801, 87);
             pnlCabecalho.TabIndex = 0;
+            // 
+            // picLogo
+            // 
+            picLogo.Image = (Image)resources.GetObject("picLogo.Image");
+            picLogo.Location = new Point(14, 15);
+            picLogo.Name = "picLogo";
+            picLogo.Size = new Size(57, 50);
+            picLogo.TabIndex = 4;
+            picLogo.TabStop = false;
+            // 
+            // lblSubtitulo
+            // 
+            lblSubtitulo.AutoSize = true;
+            lblSubtitulo.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblSubtitulo.ForeColor = SystemColors.Control;
+            lblSubtitulo.Location = new Point(307, 45);
+            lblSubtitulo.Name = "lblSubtitulo";
+            lblSubtitulo.Size = new Size(428, 20);
+            lblSubtitulo.TabIndex = 3;
+            lblSubtitulo.Text = "inicia a movimentação do veiculo no estacionamento";
+            // 
+            // lblTitulo
+            // 
+            lblTitulo.AutoSize = true;
+            lblTitulo.Font = new Font("Consolas", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTitulo.ForeColor = SystemColors.Control;
+            lblTitulo.Location = new Point(307, 10);
+            lblTitulo.Name = "lblTitulo";
+            lblTitulo.Size = new Size(269, 32);
+            lblTitulo.TabIndex = 2;
+            lblTitulo.Text = "Registrar Entrada";
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Font = new Font("Microsoft Sans Serif", 36F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label10.ForeColor = SystemColors.Control;
+            label10.Location = new Point(286, 10);
+            label10.Name = "label10";
+            label10.Size = new Size(36, 55);
+            label10.TabIndex = 1;
+            label10.Text = "|";
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new Font("Microsoft Sans Serif", 36F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label9.ForeColor = SystemColors.Control;
+            label9.Location = new Point(77, 10);
+            label9.Name = "label9";
+            label9.Size = new Size(36, 55);
+            label9.TabIndex = 1;
+            label9.Text = "|";
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Consolas", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label8.ForeColor = SystemColors.Control;
+            label8.Location = new Point(104, 25);
+            label8.Name = "label8";
+            label8.Size = new Size(197, 37);
+            label8.TabIndex = 0;
+            label8.Text = "UrBanPark ";
             // 
             // grpBuscarVeiculo
             // 
@@ -122,177 +184,157 @@
             btnBuscarPlacaVeiculo.Text = "Buscar Placa";
             btnBuscarPlacaVeiculo.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnBuscarPlacaVeiculo.UseVisualStyleBackColor = true;
+            btnBuscarPlacaVeiculo.Click += btnBuscarPlacaVeiculo_Click;
             // 
-            // groupBox2
+            // grpDadosVeiculo
             // 
-            groupBox2.Controls.Add(label4);
-            groupBox2.Controls.Add(label3);
-            groupBox2.Controls.Add(label2);
-            groupBox2.Controls.Add(textBox4);
-            groupBox2.Controls.Add(textBox3);
-            groupBox2.Controls.Add(textBox2);
-            groupBox2.ForeColor = Color.MediumBlue;
-            groupBox2.Location = new Point(14, 182);
-            groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(344, 120);
-            groupBox2.TabIndex = 2;
-            groupBox2.TabStop = false;
-            groupBox2.Text = "Dados do Veiculo";
+            grpDadosVeiculo.Controls.Add(lblCorModelo);
+            grpDadosVeiculo.Controls.Add(lblCliente);
+            grpDadosVeiculo.Controls.Add(txtCorModelo);
+            grpDadosVeiculo.Controls.Add(txtNomeCliente);
+            grpDadosVeiculo.ForeColor = Color.MediumBlue;
+            grpDadosVeiculo.Location = new Point(14, 182);
+            grpDadosVeiculo.Name = "grpDadosVeiculo";
+            grpDadosVeiculo.Size = new Size(344, 120);
+            grpDadosVeiculo.TabIndex = 2;
+            grpDadosVeiculo.TabStop = false;
+            grpDadosVeiculo.Text = "Dados do Veiculo";
             // 
-            // label4
+            // lblCorModelo
             // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Bold);
-            label4.ForeColor = SystemColors.ActiveCaptionText;
-            label4.Location = new Point(31, 98);
-            label4.Name = "label4";
-            label4.Size = new Size(85, 13);
-            label4.TabIndex = 2;
-            label4.Text = "Cor / Modelo:";
+            lblCorModelo.AutoSize = true;
+            lblCorModelo.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Bold);
+            lblCorModelo.ForeColor = SystemColors.ActiveCaptionText;
+            lblCorModelo.Location = new Point(31, 76);
+            lblCorModelo.Name = "lblCorModelo";
+            lblCorModelo.Size = new Size(85, 13);
+            lblCorModelo.TabIndex = 2;
+            lblCorModelo.Text = "Cor / Modelo:";
             // 
-            // label3
+            // lblCliente
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Bold);
-            label3.ForeColor = SystemColors.ActiveCaptionText;
-            label3.Location = new Point(39, 64);
-            label3.Name = "label3";
-            label3.Size = new Size(43, 13);
-            label3.TabIndex = 2;
-            label3.Text = "Placa:";
+            lblCliente.AutoSize = true;
+            lblCliente.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Bold);
+            lblCliente.ForeColor = SystemColors.ActiveCaptionText;
+            lblCliente.Location = new Point(31, 29);
+            lblCliente.Name = "lblCliente";
+            lblCliente.Size = new Size(46, 13);
+            lblCliente.TabIndex = 2;
+            lblCliente.Text = "Cliente";
             // 
-            // label2
+            // txtCorModelo
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Bold);
-            label2.ForeColor = SystemColors.ActiveCaptionText;
-            label2.Location = new Point(31, 29);
-            label2.Name = "label2";
-            label2.Size = new Size(46, 13);
-            label2.TabIndex = 2;
-            label2.Text = "Cliente";
+            txtCorModelo.Font = new Font("Segoe UI", 11.25F);
+            txtCorModelo.Location = new Point(138, 67);
+            txtCorModelo.Name = "txtCorModelo";
+            txtCorModelo.Size = new Size(161, 27);
+            txtCorModelo.TabIndex = 1;
             // 
-            // textBox4
+            // txtNomeCliente
             // 
-            textBox4.Font = new Font("Segoe UI", 11.25F);
-            textBox4.Location = new Point(138, 95);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(161, 27);
-            textBox4.TabIndex = 1;
+            txtNomeCliente.Font = new Font("Segoe UI", 11.25F);
+            txtNomeCliente.Location = new Point(138, 27);
+            txtNomeCliente.Name = "txtNomeCliente";
+            txtNomeCliente.Size = new Size(161, 27);
+            txtNomeCliente.TabIndex = 1;
             // 
-            // textBox3
+            // grpMovimentacao
             // 
-            textBox3.Font = new Font("Segoe UI", 11.25F);
-            textBox3.Location = new Point(138, 62);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(161, 27);
-            textBox3.TabIndex = 1;
+            grpMovimentacao.Controls.Add(lblHoraEntrada);
+            grpMovimentacao.Controls.Add(dtInfoHrEntrada);
+            grpMovimentacao.Controls.Add(dtInfoDtEntrada);
+            grpMovimentacao.Controls.Add(lblDataEntrada);
+            grpMovimentacao.Controls.Add(lblVagaSelecionada);
+            grpMovimentacao.Controls.Add(txtVagaSelecionada);
+            grpMovimentacao.ForeColor = Color.MediumBlue;
+            grpMovimentacao.Location = new Point(396, 182);
+            grpMovimentacao.Name = "grpMovimentacao";
+            grpMovimentacao.Size = new Size(392, 120);
+            grpMovimentacao.TabIndex = 2;
+            grpMovimentacao.TabStop = false;
+            grpMovimentacao.Text = "Movimentação";
             // 
-            // textBox2
+            // lblHoraEntrada
             // 
-            textBox2.Font = new Font("Segoe UI", 11.25F);
-            textBox2.Location = new Point(138, 27);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(161, 27);
-            textBox2.TabIndex = 1;
+            lblHoraEntrada.AutoSize = true;
+            lblHoraEntrada.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Bold);
+            lblHoraEntrada.ForeColor = SystemColors.ActiveCaptionText;
+            lblHoraEntrada.Location = new Point(32, 94);
+            lblHoraEntrada.Name = "lblHoraEntrada";
+            lblHoraEntrada.Size = new Size(104, 13);
+            lblHoraEntrada.TabIndex = 2;
+            lblHoraEntrada.Text = "Hora de Entrada:";
             // 
-            // groupBox3
+            // dtInfoHrEntrada
             // 
-            groupBox3.Controls.Add(label7);
-            groupBox3.Controls.Add(dateTimePicker1);
-            groupBox3.Controls.Add(dateTimePicker2);
-            groupBox3.Controls.Add(label6);
-            groupBox3.Controls.Add(label5);
-            groupBox3.Controls.Add(textBox5);
-            groupBox3.ForeColor = Color.MediumBlue;
-            groupBox3.Location = new Point(396, 182);
-            groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(392, 120);
-            groupBox3.TabIndex = 2;
-            groupBox3.TabStop = false;
-            groupBox3.Text = "Movimentação";
+            dtInfoHrEntrada.CustomFormat = "HH:mm";
+            dtInfoHrEntrada.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dtInfoHrEntrada.Format = DateTimePickerFormat.Custom;
+            dtInfoHrEntrada.Location = new Point(184, 90);
+            dtInfoHrEntrada.Name = "dtInfoHrEntrada";
+            dtInfoHrEntrada.ShowUpDown = true;
+            dtInfoHrEntrada.Size = new Size(97, 27);
+            dtInfoHrEntrada.TabIndex = 2;
             // 
-            // label7
+            // dtInfoDtEntrada
             // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Bold);
-            label7.ForeColor = SystemColors.ActiveCaptionText;
-            label7.Location = new Point(32, 94);
-            label7.Name = "label7";
-            label7.Size = new Size(104, 13);
-            label7.TabIndex = 2;
-            label7.Text = "Hora de Entrada:";
+            dtInfoDtEntrada.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dtInfoDtEntrada.Format = DateTimePickerFormat.Short;
+            dtInfoDtEntrada.Location = new Point(184, 59);
+            dtInfoDtEntrada.Name = "dtInfoDtEntrada";
+            dtInfoDtEntrada.Size = new Size(97, 27);
+            dtInfoDtEntrada.TabIndex = 2;
             // 
-            // dateTimePicker1
+            // lblDataEntrada
             // 
-            dateTimePicker1.CustomFormat = "HH:mm";
-            dateTimePicker1.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dateTimePicker1.Format = DateTimePickerFormat.Custom;
-            dateTimePicker1.Location = new Point(184, 90);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.ShowUpDown = true;
-            dateTimePicker1.Size = new Size(97, 27);
-            dateTimePicker1.TabIndex = 2;
+            lblDataEntrada.AutoSize = true;
+            lblDataEntrada.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Bold);
+            lblDataEntrada.ForeColor = SystemColors.ActiveCaptionText;
+            lblDataEntrada.Location = new Point(32, 64);
+            lblDataEntrada.Name = "lblDataEntrada";
+            lblDataEntrada.Size = new Size(104, 13);
+            lblDataEntrada.TabIndex = 2;
+            lblDataEntrada.Text = "Data de Entrada:";
             // 
-            // dateTimePicker2
+            // lblVagaSelecionada
             // 
-            dateTimePicker2.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dateTimePicker2.Format = DateTimePickerFormat.Short;
-            dateTimePicker2.Location = new Point(184, 59);
-            dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(97, 27);
-            dateTimePicker2.TabIndex = 2;
+            lblVagaSelecionada.AutoSize = true;
+            lblVagaSelecionada.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Bold);
+            lblVagaSelecionada.ForeColor = SystemColors.ActiveCaptionText;
+            lblVagaSelecionada.Location = new Point(32, 29);
+            lblVagaSelecionada.Name = "lblVagaSelecionada";
+            lblVagaSelecionada.Size = new Size(114, 13);
+            lblVagaSelecionada.TabIndex = 2;
+            lblVagaSelecionada.Text = "Vaga Selecionada:";
             // 
-            // label6
+            // txtVagaSelecionada
             // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Bold);
-            label6.ForeColor = SystemColors.ActiveCaptionText;
-            label6.Location = new Point(32, 64);
-            label6.Name = "label6";
-            label6.Size = new Size(104, 13);
-            label6.TabIndex = 2;
-            label6.Text = "Data de Entrada:";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Bold);
-            label5.ForeColor = SystemColors.ActiveCaptionText;
-            label5.Location = new Point(32, 29);
-            label5.Name = "label5";
-            label5.Size = new Size(114, 13);
-            label5.TabIndex = 2;
-            label5.Text = "Vaga Selecionada:";
-            // 
-            // textBox5
-            // 
-            textBox5.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox5.Location = new Point(184, 27);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(97, 27);
-            textBox5.TabIndex = 1;
+            txtVagaSelecionada.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtVagaSelecionada.Location = new Point(184, 27);
+            txtVagaSelecionada.Name = "txtVagaSelecionada";
+            txtVagaSelecionada.Size = new Size(97, 27);
+            txtVagaSelecionada.TabIndex = 1;
             // 
             // panel2
             // 
-            panel2.Controls.Add(button3);
+            panel2.Controls.Add(btnCancelar);
             panel2.Controls.Add(button2);
-            panel2.Controls.Add(button1);
+            panel2.Controls.Add(btnRegistrarEntrada);
             panel2.Font = new Font("Segoe UI", 11.25F);
             panel2.Location = new Point(0, 310);
             panel2.Name = "panel2";
             panel2.Size = new Size(801, 81);
             panel2.TabIndex = 3;
             // 
-            // button3
+            // btnCancelar
             // 
-            button3.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
-            button3.Location = new Point(569, 40);
-            button3.Name = "button3";
-            button3.Size = new Size(200, 28);
-            button3.TabIndex = 0;
-            button3.Text = "Cancelar ";
-            button3.UseVisualStyleBackColor = true;
+            btnCancelar.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            btnCancelar.Location = new Point(569, 40);
+            btnCancelar.Name = "btnCancelar";
+            btnCancelar.Size = new Size(200, 28);
+            btnCancelar.TabIndex = 0;
+            btnCancelar.Text = "Cancelar ";
+            btnCancelar.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
@@ -303,79 +345,15 @@
             button2.Text = "button1";
             button2.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnRegistrarEntrada
             // 
-            button1.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
-            button1.Location = new Point(324, 40);
-            button1.Name = "button1";
-            button1.Size = new Size(200, 28);
-            button1.TabIndex = 0;
-            button1.Text = "Registro Entrada";
-            button1.UseVisualStyleBackColor = true;
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Consolas", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label8.ForeColor = SystemColors.Control;
-            label8.Location = new Point(104, 25);
-            label8.Name = "label8";
-            label8.Size = new Size(197, 37);
-            label8.TabIndex = 0;
-            label8.Text = "UrBanPark ";
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Font = new Font("Microsoft Sans Serif", 36F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label9.ForeColor = SystemColors.Control;
-            label9.Location = new Point(77, 10);
-            label9.Name = "label9";
-            label9.Size = new Size(36, 55);
-            label9.TabIndex = 1;
-            label9.Text = "|";
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Font = new Font("Microsoft Sans Serif", 36F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label10.ForeColor = SystemColors.Control;
-            label10.Location = new Point(286, 10);
-            label10.Name = "label10";
-            label10.Size = new Size(36, 55);
-            label10.TabIndex = 1;
-            label10.Text = "|";
-            // 
-            // lblTitulo
-            // 
-            lblTitulo.AutoSize = true;
-            lblTitulo.Font = new Font("Consolas", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblTitulo.ForeColor = SystemColors.Control;
-            lblTitulo.Location = new Point(307, 10);
-            lblTitulo.Name = "lblTitulo";
-            lblTitulo.Size = new Size(269, 32);
-            lblTitulo.TabIndex = 2;
-            lblTitulo.Text = "Registrar Entrada";
-            // 
-            // lblSubtitulo
-            // 
-            lblSubtitulo.AutoSize = true;
-            lblSubtitulo.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblSubtitulo.ForeColor = SystemColors.Control;
-            lblSubtitulo.Location = new Point(307, 45);
-            lblSubtitulo.Name = "lblSubtitulo";
-            lblSubtitulo.Size = new Size(428, 20);
-            lblSubtitulo.TabIndex = 3;
-            lblSubtitulo.Text = "inicia a movimentação do veiculo no estacionamento";
-            // 
-            // picLogo
-            // 
-            picLogo.Image = (Image)resources.GetObject("picLogo.Image");
-            picLogo.Location = new Point(14, 15);
-            picLogo.Name = "picLogo";
-            picLogo.Size = new Size(57, 50);
-            picLogo.TabIndex = 4;
-            picLogo.TabStop = false;
+            btnRegistrarEntrada.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            btnRegistrarEntrada.Location = new Point(324, 40);
+            btnRegistrarEntrada.Name = "btnRegistrarEntrada";
+            btnRegistrarEntrada.Size = new Size(200, 28);
+            btnRegistrarEntrada.TabIndex = 0;
+            btnRegistrarEntrada.Text = "Registro Entrada";
+            btnRegistrarEntrada.UseVisualStyleBackColor = true;
             // 
             // frmRegistrarEntrada
             // 
@@ -383,23 +361,24 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 390);
             Controls.Add(panel2);
-            Controls.Add(groupBox3);
-            Controls.Add(groupBox2);
+            Controls.Add(grpMovimentacao);
+            Controls.Add(grpDadosVeiculo);
             Controls.Add(grpBuscarVeiculo);
             Controls.Add(pnlCabecalho);
             Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Bold);
             Name = "frmRegistrarEntrada";
             Text = "UrbanPark - Registrar Entrada";
+            Load += frmRegistrarEntrada_Load;
             pnlCabecalho.ResumeLayout(false);
             pnlCabecalho.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)picLogo).EndInit();
             grpBuscarVeiculo.ResumeLayout(false);
             grpBuscarVeiculo.PerformLayout();
-            groupBox2.ResumeLayout(false);
-            groupBox2.PerformLayout();
-            groupBox3.ResumeLayout(false);
-            groupBox3.PerformLayout();
+            grpDadosVeiculo.ResumeLayout(false);
+            grpDadosVeiculo.PerformLayout();
+            grpMovimentacao.ResumeLayout(false);
+            grpMovimentacao.PerformLayout();
             panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)picLogo).EndInit();
             ResumeLayout(false);
         }
 
@@ -409,25 +388,23 @@
         private GroupBox grpBuscarVeiculo;
         private TextBox mskPlacaVeiculo;
         private Button btnBuscarPlacaVeiculo;
-        private GroupBox groupBox2;
-        private TextBox textBox4;
-        private TextBox textBox3;
-        private TextBox textBox2;
-        private GroupBox groupBox3;
+        private GroupBox grpDadosVeiculo;
+        private TextBox txtCorModelo;
+        private TextBox txtNomeCliente;
+        private GroupBox grpMovimentacao;
         private Panel panel2;
-        private Button button3;
+        private Button btnCancelar;
         private Button button2;
-        private Button button1;
+        private Button btnRegistrarEntrada;
         private Label lblPlacaVeiculo;
-        private Label label4;
-        private Label label3;
-        private Label label2;
-        private DateTimePicker dateTimePicker2;
-        private TextBox textBox5;
-        private Label label7;
-        private Label label6;
-        private Label label5;
-        private DateTimePicker dateTimePicker1;
+        private Label lblCorModelo;
+        private Label lblCliente;
+        private DateTimePicker dtInfoDtEntrada;
+        private TextBox txtVagaSelecionada;
+        private Label lblHoraEntrada;
+        private Label lblDataEntrada;
+        private Label lblVagaSelecionada;
+        private DateTimePicker dtInfoHrEntrada;
         private Label label8;
         private Label lblSubtitulo;
         private Label lblTitulo;
